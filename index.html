@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Together with S J A • C++ & Java Pre-DSA Mastery</title>
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header / Navigation Bar -->
+    <header class="app-header">
+      <div class="logo-container">
+        <div class="sja-brand-badge">
+          <span class="sja-logo-text">S J A</span>
+        </div>
+        <div class="logo-badge">
+          <span class="cpp-tag">C++</span>
+          <span class="vs-tag">&amp;</span>
+          <span class="java-tag">Java</span>
+        </div>
+        <div class="title-group">
+          <h1>Learn Together with S J A</h1>
+          <p class="subtitle">Pre-DSA Code &amp; Memory Mastery • Interview-Grade Curriculum</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="teacher-guide-btn" class="btn btn-teacher" title="Open S J A's Master Study Plan">
+          🎓 S J A's Master Plan
+        </button>
+        <div class="progress-indicator">
+          <div class="progress-label">S J A Progress: <span id="progress-percentage">0%</span></div>
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="progress-bar" style="width: 0%;"></div>
+          </div>
+        </div>
+        <button id="reset-progress-btn" class="btn btn-secondary btn-sm" title="Reset progress">Reset</button>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+      <button class="nav-tab active" data-tab="roadmap">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        1. Curriculum Roadmap
+      </button>
+      <button class="nav-tab" data-tab="comparator">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+        2. Side-by-Side Comparator
+      </button>
+      <button class="nav-tab" data-tab="visualizer">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        3. Memory &amp; Pointer Visualizer
+      </button>
+      <button class="nav-tab" data-tab="interview">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        4. Interview Q&amp;A &amp; Pitfalls
+      </button>
+      <button class="nav-tab" data-tab="sandbox">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        5. Practice Sandbox
+      </button>
+      <button class="nav-tab" data-tab="quizzes">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        6. Knowledge Quizzes
+      </button>
+      <button class="nav-tab" data-tab="cheatsheet">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        7. STL vs Collections Reference
+      </button>
+    </nav>
+
+    <!-- Main Content Body -->
+    <main class="main-content">
+      
+      <!-- TAB 1: ROADMAP -->
+      <section id="tab-roadmap" class="tab-pane active">
+        <!-- Teacher Welcome Banner -->
+        <div class="teacher-welcome-card">
+          <div class="teacher-avatar">👨‍💻</div>
+          <div class="teacher-text">
+            <h2>Learn Together with S J A 👋</h2>
+            <p>Welcome to <strong>Learn Together</strong>! We will master computer programming step-by-step. Follow this 7-level path to build total confidence in C++ and Java before diving into Data Structures &amp; Algorithms.</p>
+          </div>
+          <button id="start-here-btn" class="btn btn-teacher-cta">
+            🚀 Start Level 1 Now
+          </button>
+        </div>
+
+        <div class="roadmap-grid" id="roadmap-levels-container">
+          <!-- Level Cards rendered dynamically by JS -->
+        </div>
+      </section>
+
+      <!-- TAB 2: SIDE-BY-SIDE COMPARATOR -->
+      <section id="tab-comparator" class="tab-pane">
+        <div class="section-header">
+          <div>
+            <h2>C++ vs Java Concept Comparator</h2>
+            <p>Read C++ and Java code side-by-side with S J A's architecture notes.</p>
+          </div>
+          <div class="selector-group">
+            <label for="concept-selector">Select Lesson:</label>
+            <select id="concept-selector" class="custom-select">
+              <!-- Rendered dynamically -->
+            </select>
+          </div>
+        </div>
+
+        <div class="concept-meta-card" id="concept-meta">
+          <!-- Concept description dynamically inserted -->
+        </div>
+
+        <div class="comparator-split-view">
+          <!-- C++ Panel -->
+          <div class="code-panel cpp-theme">
+            <div class="panel-header">
+              <div class="lang-title">
+                <span class="badge cpp-badge">C++</span>
+                <span id="cpp-concept-title">C++ Implementation</span>
+              </div>
+              <button class="btn btn-icon copy-btn" data-target="cpp-code-block" title="Copy C++ Code">📋 Copy</button>
+            </div>
+            <pre class="code-container"><code id="cpp-code-block" class="language-cpp"></code></pre>
+            <div class="panel-footer" id="cpp-notes">
+              <!-- C++ Notes -->
+            </div>
+          </div>
+
+          <!-- Java Panel -->
+          <div class="code-panel java-theme">
+            <div class="panel-header">
+              <div class="lang-title">
+                <span class="badge java-badge">Java</span>
+                <span id="java-concept-title">Java Implementation</span>
+              </div>
+              <button class="btn btn-icon copy-btn" data-target="java-code-block" title="Copy Java Code">📋 Copy</button>
+            </div>
+            <pre class="code-container"><code id="java-code-block" class="language-java"></code></pre>
+            <div class="panel-footer" id="java-notes">
+              <!-- Java Notes -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Takeaways & Differences -->
+        <div class="key-takeaways-card">
+          <h3>⚡ Key Differences &amp; Memory Impact</h3>
+          <ul id="takeaways-list" class="takeaways-list">
+            <!-- Dynamically populated -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- TAB 3: MEMORY & POINTER VISUALIZER -->
+      <section id="tab-visualizer" class="tab-pane">
+        <div class="section-header">
+          <div>
+            <h2>Interactive Memory &amp; Pointer Visualizer</h2>
+            <p>See exactly what happens inside computer memory when pointers and objects are created.</p>
+          </div>
+          <div class="selector-group">
+            <label for="visualizer-scenario-select">Select Scenario:</label>
+            <select id="visualizer-scenario-select" class="custom-select">
+              <option value="cpp_pointers">C++ Pointers &amp; Dereferencing (*ptr, &amp;var)</option>
+              <option value="cpp_dynamic">C++ Dynamic Heap Allocation (new / delete)</option>
+              <option value="java_references">Java Primitive vs Object References &amp; GC</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="visualizer-container">
+          <div class="visualizer-controls">
+            <button id="vis-prev-step" class="btn btn-secondary">◀ Previous Step</button>
+            <span id="vis-step-counter" class="step-badge">Step 1 of 4</span>
+            <button id="vis-next-step" class="btn btn-primary">Next Step ▶</button>
+            <button id="vis-reset-step" class="btn btn-secondary">🔄 Reset</button>
+          </div>
+
+          <div class="visualizer-canvas-wrapper">
+            <div class="memory-region stack-region">
+              <div class="region-header">
+                <h3>📚 Stack Memory (Call Frames)</h3>
+                <span class="region-desc">Fast, automatic scope allocation</span>
+              </div>
+              <div class="stack-frames-container" id="stack-container">
+                <!-- Stack slots -->
+              </div>
+            </div>
+
+            <div class="memory-region heap-region">
+              <div class="region-header">
+                <h3>🌐 Heap Memory (Dynamic Storage)</h3>
+                <span class="region-desc">Explicit allocation (C++) / Managed Objects (Java)</span>
+              </div>
+              <div class="heap-objects-container" id="heap-container">
+                <!-- Heap objects -->
+              </div>
+            </div>
+          </div>
+
+          <div class="visualizer-explanation" id="vis-explanation">
+            <!-- Explanation text -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: INTERVIEW QUESTIONS & PITFALLS -->
+      <section id="tab-interview" class="tab-pane">
+        <div class="section-header">
+          <div>
+            <h2>Technical Interview Q&amp;A &amp; Common Code Traps</h2>
+            <p>Master top technical interview questions asked by FAANG &amp; top tech companies for C++ &amp; Java.</p>
+          </div>
+        </div>
+
+        <div class="interview-questions-grid" id="interview-questions-container">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+      <!-- TAB 5: PRACTICE SANDBOX -->
+      <section id="tab-sandbox" class="tab-pane">
+        <div class="section-header">
+          <div>
+            <h2>Practice Sandbox</h2>
+            <p>Write &amp; validate code for foundational logic problems.</p>
+          </div>
+          <div class="selector-group">
+            <label for="problem-selector">Select Problem:</label>
+            <select id="problem-selector" class="custom-select">
+              <!-- Rendered dynamically -->
+            </select>
+          </div>
+        </div>
+
+        <div class="problem-details-card" id="problem-details">
+          <!-- Problem metadata dynamically loaded -->
+        </div>
+
+        <div class="sandbox-editor-wrapper">
+          <div class="editor-header">
+            <div class="lang-switch-group">
+              <button class="btn-toggle active" id="btn-lang-cpp" data-lang="cpp">C++ Solution</button>
+              <button class="btn-toggle" id="btn-lang-java" data-lang="java">Java Solution</button>
+            </div>
+            <div>
+              <button id="run-sandbox-btn" class="btn btn-success">▶ Run &amp; Validate Code</button>
+              <button id="toggle-solution-btn" class="btn btn-secondary">💡 Reveal Optimal Code</button>
+            </div>
+          </div>
+
+          <textarea id="sandbox-code-input" class="sandbox-textarea" spellcheck="false" rows="12"></textarea>
+
+          <div class="sandbox-output-panel">
+            <div class="output-header">Console Output / Execution Feedback:</div>
+            <pre id="sandbox-console-output" class="console-output">Select a problem and click "Run & Validate Code" to test your logic.</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 6: QUIZZES -->
+      <section id="tab-quizzes" class="tab-pane">
+        <div class="section-header">
+          <div>
+            <h2>Module Self-Assessment Quizzes</h2>
+            <p>Test your knowledge after completing each level.</p>
+          </div>
+          <div class="selector-group">
+            <label for="quiz-module-select">Select Quiz Module:</label>
+            <select id="quiz-module-select" class="custom-select">
+              <!-- Populated dynamically -->
+            </select>
+          </div>
+        </div>
+
+        <div class="quiz-container" id="quiz-card">
+          <!-- Quiz items populated dynamically -->
+        </div>
+      </section>
+
+      <!-- TAB 7: STL vs COLLECTIONS CHEATSHEET -->
+      <section id="tab-cheatsheet" class="tab-pane">
+        <div class="section-header">
+          <div>
+            <h2>C++ STL vs Java Collections Reference</h2>
+            <p>Quick lookup table for essential data structures and algorithms.</p>
+          </div>
+          <div class="search-box">
+            <input type="text" id="cheatsheet-search" placeholder="🔍 Search STL or Java equivalent (e.g. vector, HashMap)..." class="custom-input">
+          </div>
+        </div>
+
+        <div class="cheatsheet-table-wrapper">
+          <table class="cheatsheet-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>C++ STL Component</th>
+                <th>Java Collections / Built-in</th>
+                <th>Time Complexity</th>
+                <th>Usage in DSA</th>
+              </tr>
+            </thead>
+            <tbody id="cheatsheet-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Teacher Guide Modal -->
+    <div id="teacher-modal" class="modal-backdrop">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>👨‍💻 S J A's 3-Week Pre-DSA Master Plan</h2>
+          <button id="close-modal-btn" class="modal-close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-intro">Follow S J A's step-by-step schedule to build total confidence before starting Data Structures &amp; Algorithms:</p>
+          
+          <div class="schedule-timeline">
+            <div class="timeline-step">
+              <div class="step-num">Week 1</div>
+              <div class="step-info">
+                <h4>Foundations, Control Flow &amp; Functions (Levels 1–3)</h4>
+                <p>Master compilation, data types, integer overflow, fast I/O, nested loops for patterns, and parameter passing (Pass-by-value vs Pass-by-ref).</p>
+              </div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="step-num">Week 2</div>
+              <div class="step-info">
+                <h4>Arrays, Strings &amp; Memory Pointers (Levels 4–5)</h4>
+                <p>Learn dynamic vectors/ArrayLists, String immutability vs StringBuilder, and master <strong>Pointers &amp; Memory Allocation</strong> using the Visualizer tool!</p>
+              </div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="step-num">Week 3</div>
+              <div class="step-info">
+                <h4>OOP Abstraction &amp; STL/Collections (Levels 6–7)</h4>
+                <p>Build custom Node classes using OOP, master Templates vs Generics, and memorize C++ STL vs Java Collections mappings.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="teacher-tips-box">
+            <h4>💡 S J A's 3 Golden Rules for Learning</h4>
+            <ul>
+              <li><strong>Rule 1:</strong> Always read C++ and Java side-by-side in the <strong>Comparator Tab</strong> to understand how memory works under the hood.</li>
+              <li><strong>Rule 2:</strong> Use the <strong>Memory Visualizer Tab</strong> for Level 5 — seeing pointers visually makes concepts 10x easier to retain!</li>
+              <li><strong>Rule 3:</strong> Write code yourself in the <strong>Practice Sandbox</strong> before looking at the solution.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="modal-start-btn" class="btn btn-primary">Start Level 1 Now 🚀</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Learn Together with S J A • Dual C++ &amp; Java Pre-DSA Mastery Platform</p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/curriculumData.js"></script>
+  <script src="js/codeVisualizer.js"></script>
+  <script src="js/sandboxEngine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
